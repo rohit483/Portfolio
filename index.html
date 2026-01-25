@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +30,9 @@
         }
 
         /* Typography */
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             color: #333333;
             margin-bottom: 15px;
         }
@@ -78,7 +81,8 @@
             padding: 30px 0;
             border-bottom: 1px solid #eeeeee;
             margin-bottom: 40px;
-            overflow: hidden; /* Clearfix for floats */
+            overflow: hidden;
+            /* Clearfix for floats */
         }
 
         .header-name {
@@ -176,7 +180,9 @@
 
         /* Responsive */
         @media (max-width: 600px) {
-            .header-name, nav {
+
+            .header-name,
+            nav {
                 float: none;
                 text-align: center;
                 display: block;
@@ -202,7 +208,7 @@
                 border: none;
                 padding-left: 0;
             }
-            
+
             .skills-table tr {
                 border-bottom: 1px solid #f5f5f5;
                 display: block;
@@ -211,6 +217,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -228,7 +235,8 @@
         <!-- Introduction -->
         <section class="intro">
             <p style="font-size: 18px;">
-                Hi, I'm Rohit. I am a B.Tech student in Computer Science (AI/ML) based in Bhopal, India. I build intelligent systems using Python, PyTorch, and FastAPI.
+                Hi, I'm Rohit. I am a B.Tech student in Computer Science (AI/ML) based in Dewas, India. I build
+                intelligent systems using Python, PyTorch, and FastAPI.
             </p>
             <a href="#" class="btn" id="resume">Download Resume</a>
         </section>
@@ -257,44 +265,85 @@
         <!-- Projects -->
         <section id="projects">
             <h2>Projects</h2>
-            
+
             <div class="project-item">
-                <h3>Placify</h3>
+                <h3><a href="https://github.com/rohit483/Placify" target="_blank">Placify</a></h3>
                 <div class="project-meta">AI Career Assistant (Python, FastAPI)</div>
-                <p>An AI-driven placement platform that parses PDF resumes to generate readiness scores using Google Gemini.</p>
+                <p>An AI-driven placement platform that parses PDF resumes to generate readiness scores using Google
+                    Gemini.</p>
             </div>
 
             <div class="project-item">
-                <h3>Social Pulse</h3>
+                <h3><a href="https://github.com/rohit483/social_pulse" target="_blank">Social Pulse</a></h3>
                 <div class="project-meta">AI Sentiment Analysis (Flask, VADER)</div>
                 <p>A web application that scrapes Instagram feedback to quantify sentiment into actionable metrics.</p>
             </div>
         </section>
 
-        <!-- Timeline -->
-        <section id="timeline">
-            <h2>Timeline</h2>
-            
+        <!-- Education -->
+        <section id="education">
+            <h2>Education</h2>
+
             <div class="timeline-item">
-                <h3>Education</h3>
-                <p>B.Tech in CS/AI/ML (RGPV) | Diploma in Mech. Eng. (2022)</p>
+                <h3>Rajiv Gandhi Proudyogiki Vishwavidyalaya (R.G.P.V)</h3>
+                <span class="timeline-date">Bhopal, MP, India | Aug. 2019 - Present</span>
+                <p>B.Tech. in Computer Science (AI/ML) | SPGA: 5.79 | Aug 2023 - Present</p>
+                <p>Polytechnic Diploma in Mechanical Engineering | CPGA: 7.84 | Aug. 2019 - Dec. 2022 </p>
             </div>
 
             <div class="timeline-item">
-                <h3>Certifications</h3>
-                <p>PyTorch Bootcamp, Python (HackerRank), Linux Unhatched (Cisco)</p>
+                <h3>Madhya Pradesh Board of Secondary Education (MPBSE)</h3>
+                <span class="timeline-date">Bhopal, MP, India | July 2021</span>
+                <p>Higher Secondary (12th) - PCM | Aggregate: 62%</p>
+            </div>
+
+            <div class="timeline-item">
+                <h3>Central Board of Secondary Education (CBSE)</h3>
+                <span class="timeline-date">Delhi, India | May 2019</span>
+                <p>Secondary (10th) | Aggregate: 64%</p>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+
+            <div class="timeline-item">
+                <h3><a href="https://courses.opencv.org/certificates/2d56336d7f1047b99b606818d5986f81"
+                        target="_blank">PyTorch Bootcamp</a></h3>
+                <span class="timeline-date">OpenCV University | Jan. 2026</span>
+            </div>
+
+            <div class="timeline-item">
+                <h3><a href="https://www.hackerrank.com/certificates/iframe/3884e9e04585" target="_blank">Python
+                        (Basic)</a></h3>
+                <span class="timeline-date">HackerRank | Jan. 2026</span>
+            </div>
+
+            <div class="timeline-item">
+                <h3><a href="https://www.kaggle.com/learn/certification/devritz/pandas" target="_blank">Pandas</a></h3>
+                <span class="timeline-date">Kaggle | Jan. 2026</span>
+            </div>
+
+            <div class="timeline-item">
+                <h3><a href="https://www.credly.com/badges/67815a31-8ccb-4c80-b9d1-928a4402a3b9/public_url"
+                        target="_blank">Linux Unhatched</a></h3>
+                <span class="timeline-date">Cisco Networking Academy | Jan. 2026</span>
             </div>
         </section>
 
         <!-- Footer -->
         <footer id="contact">
-            <p>&copy; 2026 Rohit Chawda. Contact: rohitchawda4241@gmail.com | +91 7587904241</p>
+            <p>&copy; 2026 Rohit Chawda.</p>
+            <p>rohitchawda4241@gmail.com | +91 7587904241</p>
             <p>
-                <a href="#">LinkedIn</a>
-                <a href="#">GitHub</a>
+                <a href="https://www.linkedin.com/in/rohit-chawda-a99543219?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    target="_blank">LinkedIn</a>
+                <a href="https://github.com/rohit483" target="_blank">GitHub</a>
             </p>
         </footer>
     </div>
 
 </body>
+
 </html>
