@@ -1,0 +1,351 @@
+/* CSS Variables & Theme Setup */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --text-secondary: #666666;
+    --accent-color: #0056b3;
+    --accent-hover: #004494;
+    --border-color: #e0e0e0;
+    --card-bg: #ffffff;
+    --font-stack: "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --accent-color: #4da3ff;
+    --accent-hover: #7ebaff;
+    --border-color: #333333;
+    --card-bg: #1e1e1e;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    font-size: 16px;
+    padding-bottom: 60px;
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Grid System */
+.grid-container {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* 3 Column Grid (Skills) */
+.col-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* 2 Column Grid (Projects, Certs) */
+.col-2 {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+/* Single Column (Education) */
+.col-1 {
+    grid-template-columns: 1fr;
+}
+
+/* Card Styling */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    /* For when card is an anchor */
+    color: var(--text-color);
+    /* Inherit text color */
+}
+
+/* Clickable Card Specifics */
+a.card {
+    cursor: pointer;
+}
+
+a.card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+a.card h3 {
+    color: var(--accent-color);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 26px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-align: center;
+    /* Centered Headings */
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-hover);
+}
+
+/* Remove underline for text inside clickable cards except explicit links (though card itself is link) */
+a.card:hover {
+    text-decoration: none;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    margin: 40px 0;
+}
+
+/* Header & Nav */
+header {
+    padding: 20px 0;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background-color: var(--border-color);
+}
+
+/* Hero Section */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+    /* Center align items */
+    text-align: center;
+    /* Center align text */
+    margin-bottom: 50px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff !important;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 6px;
+    margin-top: 15px;
+    border: none;
+    text-decoration: none !important;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* Skills Specifics */
+.skill-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-list li {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .skill-list li {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* Project/Timeline Specifics */
+.project-meta,
+.timeline-date {
+    font-size: 13px;
+    color: var(--accent-color);
+    margin-bottom: 12px;
+    display: block;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-secondary);
+    padding-bottom: 30px;
+}
+
+footer h2 {
+    margin-top: 0;
+    border-bottom: none;
+    padding-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Increased gap for icon separation */
+    text-decoration: none;
+}
+
+.footer-links img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.footer-links a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Invert GitHub icon in dark mode so it's visible */
+[data-theme="dark"] .footer-links img[alt="github"] {
+    filter: invert(1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+
+    .col-3,
+    .col-2 {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+    }
+}
