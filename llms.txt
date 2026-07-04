@@ -1,0 +1,12 @@
+# Rohit Chawda Portfolio
+
+> A personal portfolio site for Rohit Chawda, a B.Tech student focused on AI, machine learning, and backend development in Python and FastAPI.
+
+## Portfolio & Projects
+- [Rohit Chawda Portfolio](https://rohitchawda.me/): The main portfolio page featuring my resume, core competencies, and project history.
+- [Placify Repository](https://github.com/rohit483/placify): An AI career assistant built with Python and FastAPI.
+- [Social Pulse Repository](https://github.com/rohit483/social-pulse): A sentiment analysis web application built with Flask and the VADER model.
+
+## Contact & Profiles
+- [GitHub Profile](https://github.com/rohit483): My open-source code repositories and development history.
+- [LinkedIn Profile](https://www.linkedin.com/in/rohit-chawda-a99543219): My professional network and academic background.
