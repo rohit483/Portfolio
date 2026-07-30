@@ -116,3 +116,57 @@ async function handleChat() {
 
 sendBtn.addEventListener('click', handleChat);
 chatInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleChat(); });
+
+// Contact Form Logic
+const contactForm = document.getElementById('contact-form');
+const contactSubmitBtn = document.getElementById('contact-submit-btn');
+const contactStatus = document.getElementById('contact-status');
+
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+
+    if (!name || !email || !message) return;
+
+    // Disable button to prevent double submission
+    contactSubmitBtn.disabled = true;
+    contactSubmitBtn.textContent = 'Sending...';
+    contactSubmitBtn.style.opacity = '0.7';
+    contactSubmitBtn.style.cursor = 'not-allowed';
+    contactStatus.style.display = 'none';
+
+    try {
+        const res = await fetch('https://portfolioemail.rohitchawda4241.workers.dev/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, message })
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+            contactStatus.textContent = '✅ Message sent successfully!';
+            contactStatus.style.color = 'green';
+            contactForm.reset();
+        } else {
+            contactStatus.textContent = `❌ ${data.error || 'Failed to send message.'}`;
+            contactStatus.style.color = 'red';
+        }
+    } catch (err) {
+        contactStatus.textContent = '❌ Could not reach the server. Please try again later.';
+        contactStatus.style.color = 'red';
+    }
+
+    contactStatus.style.display = 'block';
+
+    // Re-enable button after 5 seconds
+    setTimeout(() => {
+        contactSubmitBtn.disabled = false;
+        contactSubmitBtn.textContent = 'Send Message';
+        contactSubmitBtn.style.opacity = '1';
+        contactSubmitBtn.style.cursor = 'pointer';
+    }, 5000);
+});
